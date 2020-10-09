@@ -1,0 +1,299 @@
+[
+  {
+    "timestamp": "2020-09-09T10:11:12.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 6.1,
+    "temp": 59.8,
+    "volume": 18.2,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:13.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 7.3,
+    "temp": 41.5,
+    "volume": 19.6,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:14.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 7.7,
+    "temp": 53.4,
+    "volume": 27.8,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:15.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 7.6,
+    "temp": 32.9,
+    "volume": 18,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:16.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 7.9,
+    "temp": 30.3,
+    "volume": 27.2,
+    "status": "Off"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:17.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 6.7,
+    "temp": 55,
+    "volume": 17.4,
+    "status": "Off"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:18.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 6,
+    "temp": 47.1,
+    "volume": 33,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:19.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 7.1,
+    "temp": 31.8,
+    "volume": 27.8,
+    "status": "Off"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:20.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 7.5,
+    "temp": 54,
+    "volume": 21.3,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:21.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 7.9,
+    "temp": 34.2,
+    "volume": 15.1,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:22.1314Z",
+    "device_type": "Good",
+    "device_id": "abc",
+    "pressure": 7.7,
+    "temp": 20.8,
+    "volume": 23.5,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:12.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 6.3,
+    "temp": 37.9,
+    "volume": 23.7,
+    "status": "Off"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:13.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 6.8,
+    "temp": 37.5,
+    "volume": 31.3,
+    "status": "Off"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:14.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 6.1,
+    "temp": 25.9,
+    "volume": 31.8,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:15.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 6.8,
+    "temp": 41.3,
+    "volume": 22.6,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:16.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 6.9,
+    "temp": 22.5,
+    "volume": 32.2,
+    "status": "Off"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:17.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 7.4,
+    "temp": 41.5,
+    "volume": 15.5,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:18.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 6.8,
+    "temp": 35.9,
+    "volume": 29.1,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:19.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 6.3,
+    "temp": 42.4,
+    "volume": 29.9,
+    "status": "Off"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:20.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 6.4,
+    "temp": 59.7,
+    "volume": 34.4,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:21.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 6.5,
+    "temp": 22.8,
+    "volume": 19,
+    "status": "Off"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:22.1314Z",
+    "device_type": "Bad",
+    "device_id": "def",
+    "pressure": 8,
+    "temp": 39.4,
+    "volume": 33,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:12.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 7.9,
+    "temp": 35.6,
+    "volume": 22.7,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:13.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 6.2,
+    "temp": 29,
+    "volume": 33.4,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:14.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 6.6,
+    "temp": 21.2,
+    "volume": 26.8,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:15.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 6.1,
+    "temp": 55.6,
+    "volume": 32.4,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:16.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 7.8,
+    "temp": 49.1,
+    "volume": 22.1,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:17.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 6.4,
+    "temp": 58.9,
+    "volume": 20.3,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:18.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 7.7,
+    "temp": 28.6,
+    "volume": 24.7,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:19.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 6.2,
+    "temp": 29,
+    "volume": 16.9,
+    "status": "Load"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:20.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 7,
+    "temp": 35.5,
+    "volume": 22.3,
+    "status": "Off"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:21.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 6.4,
+    "temp": 32.5,
+    "volume": 28.3,
+    "status": "Unload"
+  },
+  {
+    "timestamp": "2020-09-09T10:11:22.1314Z",
+    "device_type": "Ugly",
+    "device_id": "ghi",
+    "pressure": 7.8,
+    "temp": 39.7,
+    "volume": 27.5,
+    "status": "Unload"
+  }
+]
