@@ -34,7 +34,7 @@ const Container = styled.div`
 
 const DeviceRecord = styled(Link)`
   display: flex;
-  border-top: 1px solid #dfe5e8;
+  border-top: 1px solid ${theme.colors.border};
   text-decoration: none;
 `;
 
