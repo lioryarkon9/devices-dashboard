@@ -16,7 +16,7 @@ const deviceReadings = workStationsReadings.reduce(
       volume,
       status,
       timestamp,
-      device_type: deviceType
+      device_type: deviceType,
     } = currentReading;
 
     if (deviceId in devices) {

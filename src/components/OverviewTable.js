@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import {getDeviceTypeColor} from "../utils";
+import { getDeviceTypeColor } from "../utils";
 import theme from "../theme";
 
 const OverviewTable = ({ deviceReadings }) => (
@@ -18,7 +18,9 @@ const OverviewTable = ({ deviceReadings }) => (
     <Body>
       {Object.values(deviceReadings).map(({ id, readings }) => (
         <DeviceRow key={id} to={`/drilldown/${id}`}>
-          <TextCell deviceType={readings[readings.length - 1].deviceType}>{id}</TextCell>
+          <TextCell deviceType={readings[readings.length - 1].deviceType}>
+            {id}
+          </TextCell>
           <DigitsCell>{readings[readings.length - 1].pressure}</DigitsCell>
           <DigitsCell>{readings[readings.length - 1].temp}</DigitsCell>
           <DigitsCell>{readings[readings.length - 1].volume}</DigitsCell>
@@ -51,7 +53,8 @@ const TextCell = styled.div`
   width: 35%;
   padding: 5px;
   text-align: center;
-  color: ${({deviceType}) => deviceType ? getDeviceTypeColor(deviceType) : theme.colors.text};
+  color: ${({ deviceType }) =>
+    deviceType ? getDeviceTypeColor(deviceType) : theme.colors.text};
 `;
 
 const DigitsCell = styled.div`
