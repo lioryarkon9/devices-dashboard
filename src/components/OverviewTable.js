@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import {getDeviceTypeColor} from "../utils";
 import theme from "../theme";
 
 const OverviewTable = ({ deviceReadings }) => (
@@ -16,13 +17,13 @@ const OverviewTable = ({ deviceReadings }) => (
 
     <Body>
       {Object.values(deviceReadings).map(({ id, readings }) => (
-        <DeviceRecord key={id} to={`/drilldown/${id}`}>
-          <TextCell>{id}</TextCell>
+        <DeviceRow key={id} to={`/drilldown/${id}`}>
+          <TextCell deviceType={readings[readings.length - 1].deviceType}>{id}</TextCell>
           <DigitsCell>{readings[readings.length - 1].pressure}</DigitsCell>
           <DigitsCell>{readings[readings.length - 1].temp}</DigitsCell>
           <DigitsCell>{readings[readings.length - 1].volume}</DigitsCell>
           <TextCell>{readings[readings.length - 1].status}</TextCell>
-        </DeviceRecord>
+        </DeviceRow>
       ))}
     </Body>
   </Container>
@@ -32,10 +33,10 @@ const Container = styled.div`
   padding: 5px;
 `;
 
-const DeviceRecord = styled(Link)`
+const DeviceRow = styled(Link)`
+  text-decoration: none;
   display: flex;
   border-top: 1px solid ${theme.colors.border};
-  text-decoration: none;
 `;
 
 const Body = styled.div`
@@ -50,7 +51,7 @@ const TextCell = styled.div`
   width: 35%;
   padding: 5px;
   text-align: center;
-  color: ${theme.colors.text};
+  color: ${({deviceType}) => deviceType ? getDeviceTypeColor(deviceType) : theme.colors.text};
 `;
 
 const DigitsCell = styled.div`

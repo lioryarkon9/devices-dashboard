@@ -29,30 +29,36 @@ const DrillDown = ({ currentDevice }) => {
 
         <RecentReadings>
           <EcoPlantReading
-            desktopConfig={!isSmallScreen && {
-              setGraphId: () => setDesktopModeGraphId("pressure"),
-              isSelected: desktopModeGraphId === "pressure"
-            }}
+            desktopConfig={
+              !isSmallScreen && {
+                setGraphId: () => setDesktopModeGraphId("pressure"),
+                isSelected: desktopModeGraphId === "pressure",
+              }
+            }
             label="Pressure"
             value={
               currentDevice.readings[currentDevice.readings.length - 1].pressure
             }
           />
           <EcoPlantReading
-            desktopConfig={!isSmallScreen && {
-              setGraphId: () => setDesktopModeGraphId("temp"),
-              isSelected: desktopModeGraphId === "temp"
-            }}
+            desktopConfig={
+              !isSmallScreen && {
+                setGraphId: () => setDesktopModeGraphId("temp"),
+                isSelected: desktopModeGraphId === "temp",
+              }
+            }
             label="Temperature"
             value={
               currentDevice.readings[currentDevice.readings.length - 1].temp
             }
           />
           <EcoPlantReading
-            desktopConfig={!isSmallScreen && {
-              setGraphId: () => setDesktopModeGraphId("volume"),
-              isSelected: desktopModeGraphId === "volume"
-            }}
+            desktopConfig={
+              !isSmallScreen && {
+                setGraphId: () => setDesktopModeGraphId("volume"),
+                isSelected: desktopModeGraphId === "volume",
+              }
+            }
             label="Volume"
             value={
               currentDevice.readings[currentDevice.readings.length - 1].volume

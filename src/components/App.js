@@ -16,17 +16,18 @@ const deviceReadings = workStationsReadings.reduce(
       volume,
       status,
       timestamp,
+      device_type: deviceType
     } = currentReading;
 
     if (deviceId in devices) {
       devices[deviceId].readings = [
         ...devices[deviceId].readings,
-        { pressure, temp, volume, status, timestamp },
+        { pressure, temp, volume, status, timestamp, deviceType },
       ];
     } else {
       devices[deviceId] = {
         id: deviceId,
-        readings: [{ pressure, temp, volume, status, timestamp }],
+        readings: [{ pressure, temp, volume, status, timestamp, deviceType }],
       };
     }
 

@@ -9,6 +9,9 @@ const theme = {
     temperature: "#95c121",
     volume: "#fcd948",
     stationGraph: "#44ccf7",
+    good: "#95c121",
+    bad: "#fcd948",
+    ugly: "#48484c"
   },
   maxSmallScreenWidth: "700px",
 };

@@ -3,11 +3,7 @@ import styled from "styled-components";
 
 import theme from "../theme";
 
-const EcoPlantReading = ({
-  label,
-  value,
-  desktopConfig
-}) => (
+const EcoPlantReading = ({ label, value, desktopConfig }) => (
   <Container
     isSelectedInWideScreen={desktopConfig && desktopConfig.isSelected}
     onClick={desktopConfig ? desktopConfig.setGraphId : undefined}

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import theme from "../../theme";
+import {getRecentReading, getDeviceTypeColor} from "../../utils";
 
 import { PageContainer, PageTitle, MaxWidthContainer } from "../commonStyled";
 import OverviewTable from "../OverviewTable";
@@ -20,9 +21,10 @@ const OverviewPage = ({ deviceReadings }) => {
           <div>
             {Object.values(deviceReadings).map((device) => (
               <Device to={`/drilldown/${device.id}`} key={device.id}>
+                <TypeIndicator deviceType={getRecentReading(device).deviceType}/>
                 <Id>{device.id}</Id>
                 <Status>
-                  {device.readings[device.readings.length - 1].status}
+                  {getRecentReading(device).status}
                 </Status>
               </Device>
             ))}
@@ -36,11 +38,11 @@ const OverviewPage = ({ deviceReadings }) => {
 };
 
 const Status = styled.div`
-  width: 35%;
+  width: 30%;
 `;
 
 const Id = styled.div`
-  width: 65%;
+  flex-grow: 1;
 `;
 
 const Device = styled(Link)`
@@ -54,6 +56,14 @@ const Device = styled(Link)`
   &:first-child {
     border-top: none;
   }
+`;
+
+const TypeIndicator = styled.div`
+  width: 20px;
+  background-color: ${({deviceType}) => getDeviceTypeColor(deviceType)};
+  border-radius: 10px;
+  margin-right: 8px;
+  box-shadow: 0 0 2px 2px ${theme.colors.border};
 `;
 
 export default OverviewPage;
