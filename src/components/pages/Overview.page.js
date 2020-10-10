@@ -3,10 +3,10 @@ import { useMedia } from "react-use-media";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import theme from "../theme";
+import theme from "../../theme";
 
-import { PageContainer, PageTitle, MaxWidthContainer } from "./commonStyled";
-import OverviewTable from "./OverviewTable";
+import { PageContainer, PageTitle, MaxWidthContainer } from "../commonStyled";
+import OverviewTable from "../OverviewTable";
 
 const OverviewPage = ({ deviceReadings }) => {
   const isSmallScreen = useMedia({ maxWidth: theme.maxSmallScreenWidth });

@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import workStationsReadings from "../devicesReadings.json";
 
-import Overview from "./Overview.page";
-import DrillDown from "./DrillDown.page";
-import StationView from "./StationView.page";
+import Overview from "./pages/Overview.page";
+import DrillDown from "./pages/DrillDown.page";
+import StationView from "./pages/StationView.page";
 
 const deviceReadings = workStationsReadings.reduce(
   (devices, currentReading) => {

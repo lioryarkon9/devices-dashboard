@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import theme from "../theme";
 
-const DeviceReading = ({
+const EcoPlantReading = ({
   label,
   value,
   isSelectedInWideScreen,
@@ -52,4 +52,4 @@ const Container = styled.div`
   }
 `;
 
-export default DeviceReading;
+export default EcoPlantReading;
