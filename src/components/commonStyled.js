@@ -8,7 +8,7 @@ export const PageContainer = styled.div`
   min-height: 100%;
   background-color: ${theme.colors.pageBackground};
   max-width: 1700px;
-  color: ${theme.colors.text}
+  color: ${theme.colors.text};
 `;
 
 export const MaxWidthContainer = styled.div`

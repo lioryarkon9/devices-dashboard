@@ -3,8 +3,16 @@ import styled from "styled-components";
 
 import theme from "../theme";
 
-const DeviceReading = ({label, value}) => (
-  <Container>
+const DeviceReading = ({
+  label,
+  value,
+  isSelectedInWideScreen,
+  setGraphId,
+}) => (
+  <Container
+    isSelectedInWideScreen={isSelectedInWideScreen}
+    onClick={setGraphId}
+  >
     <Label>{label}</Label>
     <Value>{value}</Value>
   </Container>
@@ -29,15 +37,18 @@ const Value = styled.div`
 
 const Container = styled.div`
   flex-grow: 1;
-
+  background-color: ${({ isSelectedInWideScreen }) =>
+    isSelectedInWideScreen ? "#e5e5e5" : "transparent"};
   border: 1px solid;
   margin: 5px;
   padding: 20px;
   border-radius: 10px;
+  cursor: pointer;
 
   @media only screen and (max-width: ${theme.maxSmallScreenWidth}) {
     width: 100%;
     display: flex;
+    background-color: transparent;
   }
 `;
 
