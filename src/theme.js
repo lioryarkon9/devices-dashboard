@@ -6,6 +6,7 @@ const theme = {
     label: "#707070",
     border: "#dfe5e8",
   },
+  maxSmallScreenWidth: "700px"
 };
 
 export default theme;

@@ -9,7 +9,7 @@ import { PageContainer, PageTitle, MaxWidthContainer } from "./commonStyled";
 import OverviewTable from "./OverviewTable";
 
 const OverviewPage = ({ deviceReadings }) => {
-  const isSmallScreen = useMedia({ maxWidth: 700 });
+  const isSmallScreen = useMedia({ maxWidth: theme.maxSmallScreenWidth });
 
   return (
     <MaxWidthContainer>
