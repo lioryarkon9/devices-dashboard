@@ -1,27 +1,19 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import styled from "styled-components";
 import { useMedia } from "react-use-media";
 
-import theme from "../../theme";
+import theme, { desktopGraphConfig } from "../../theme";
 
-import { PageContainer, MaxWidthContainer, PageTitle } from "../commonStyled";
-import DeviceReading from "../DeviceReading";
+import {
+  GraphContainer,
+  Graph,
+  PageContainer,
+  MaxWidthContainer,
+  PageTitle,
+  RecentReadings,
+} from "../commonStyled";
+import EcoPlantReading from "../EcoPlantReading";
 import SmallScreenGraphs from "../SmallScreenGraphs";
-
-const desktopGraphConfig = {
-  getReadings: (graphId, readings) =>
-    readings.map((reading) => reading[graphId]),
-  pressure: {
-    graphColor: theme.colors.pressure,
-  },
-  temp: {
-    graphColor: theme.colors.temperature,
-  },
-  volume: {
-    graphColor: theme.colors.volume,
-  },
-};
 
 const DrillDown = ({ currentDevice }) => {
   const isSmallScreen = useMedia({ maxWidth: theme.maxSmallScreenWidth });
@@ -35,8 +27,8 @@ const DrillDown = ({ currentDevice }) => {
       <PageContainer>
         <PageTitle>Device: {currentDevice.id}</PageTitle>
 
-        <DeviceRecentReadings>
-          <DeviceReading
+        <RecentReadings>
+          <EcoPlantReading
             setGraphId={() => setDesktopModeGraphId("pressure")}
             isSelectedInWideScreen={desktopModeGraphId === "pressure"}
             label="Pressure"
@@ -44,7 +36,7 @@ const DrillDown = ({ currentDevice }) => {
               currentDevice.readings[currentDevice.readings.length - 1].pressure
             }
           />
-          <DeviceReading
+          <EcoPlantReading
             setGraphId={() => setDesktopModeGraphId("temp")}
             isSelectedInWideScreen={desktopModeGraphId === "temp"}
             label="Temperature"
@@ -52,7 +44,7 @@ const DrillDown = ({ currentDevice }) => {
               currentDevice.readings[currentDevice.readings.length - 1].temp
             }
           />
-          <DeviceReading
+          <EcoPlantReading
             setGraphId={() => setDesktopModeGraphId("volume")}
             isSelectedInWideScreen={desktopModeGraphId === "volume"}
             label="Volume"
@@ -60,7 +52,7 @@ const DrillDown = ({ currentDevice }) => {
               currentDevice.readings[currentDevice.readings.length - 1].volume
             }
           />
-        </DeviceRecentReadings>
+        </RecentReadings>
 
         {isSmallScreen ? (
           <SmallScreenGraphs
@@ -110,24 +102,5 @@ const DrillDown = ({ currentDevice }) => {
     </MaxWidthContainer>
   );
 };
-
-const GraphContainer = styled.div`
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-`;
-
-const Graph = styled.div`
-  width: 800px;
-  height: 600px;
-`;
-
-const DeviceRecentReadings = styled.div`
-  display: flex;
-
-  @media only screen and (max-width: ${theme.maxSmallScreenWidth}) {
-    flex-wrap: wrap;
-  }
-`;
 
 export default DrillDown;
