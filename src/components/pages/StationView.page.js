@@ -27,20 +27,26 @@ const StationView = ({ stationsReadings }) => {
 
         <RecentReadings>
           <EcoPlantReading
-            setGraphId={() => setDesktopModeGraphId("pressure")}
-            isSelectedInWideScreen={desktopModeGraphId === "pressure"}
+            desktopConfig={!isSmallScreen && {
+              setGraphId: () => setDesktopModeGraphId("pressure"),
+              isSelected: desktopModeGraphId === "pressure"
+            }}
             label="Pressure"
             value={stationsReadings[stationsReadings.length - 1].pressure}
           />
           <EcoPlantReading
-            setGraphId={() => setDesktopModeGraphId("temp")}
-            isSelectedInWideScreen={desktopModeGraphId === "temp"}
+            desktopConfig={!isSmallScreen && {
+              setGraphId: () => setDesktopModeGraphId("temp"),
+              isSelected: desktopModeGraphId === "temp"
+            }}
             label="Temperature"
             value={stationsReadings[stationsReadings.length - 1].temp}
           />
           <EcoPlantReading
-            setGraphId={() => setDesktopModeGraphId("volume")}
-            isSelectedInWideScreen={desktopModeGraphId === "volume"}
+            desktopConfig={!isSmallScreen && {
+              setGraphId: () => setDesktopModeGraphId("volume"),
+              isSelected: desktopModeGraphId === "volume"
+            }}
             label="Volume"
             value={stationsReadings[stationsReadings.length - 1].volume}
           />

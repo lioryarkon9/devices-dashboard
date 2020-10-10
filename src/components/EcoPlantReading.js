@@ -6,12 +6,11 @@ import theme from "../theme";
 const EcoPlantReading = ({
   label,
   value,
-  isSelectedInWideScreen,
-  setGraphId,
+  desktopConfig
 }) => (
   <Container
-    isSelectedInWideScreen={isSelectedInWideScreen}
-    onClick={setGraphId}
+    isSelectedInWideScreen={desktopConfig && desktopConfig.isSelected}
+    onClick={desktopConfig ? desktopConfig.setGraphId : undefined}
   >
     <Label>{label}</Label>
     <Value>{value}</Value>
