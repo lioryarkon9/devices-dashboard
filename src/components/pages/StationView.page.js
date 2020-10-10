@@ -1,7 +1,6 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
 
-import { PageContainer } from "./commonStyled";
+import { PageContainer } from "../commonStyled";
 
 const StationView = ({ stationsReadings }) => (
   <PageContainer>

@@ -3,11 +3,11 @@ import { Line } from "react-chartjs-2";
 import styled from "styled-components";
 import { useMedia } from "react-use-media";
 
-import theme from "../theme";
+import theme from "../../theme";
 
-import { PageContainer, MaxWidthContainer, PageTitle } from "./commonStyled";
-import DeviceReading from "./DeviceReading";
-import SmallScreenGraphs from "./SmallScreenGraphs";
+import { PageContainer, MaxWidthContainer, PageTitle } from "../commonStyled";
+import DeviceReading from "../DeviceReading";
+import SmallScreenGraphs from "../SmallScreenGraphs";
 
 const desktopGraphConfig = {
   getReadings: (graphId, readings) =>
