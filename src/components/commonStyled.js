@@ -37,7 +37,7 @@ export const GraphContainer = styled.div`
   justify-content: center;
 `;
 
-export const Graph = styled.div`
+export const WideScreenGraph = styled.div`
   width: 800px;
   height: 600px;
 `;

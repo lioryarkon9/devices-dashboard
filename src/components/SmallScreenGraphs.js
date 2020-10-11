@@ -15,8 +15,6 @@ const SmallScreenGraphs = ({ pressure, temperature, volume }) => (
             },
           ],
         }}
-        height={350}
-        width={533.33}
       />
     </Graph>
 
@@ -31,8 +29,6 @@ const SmallScreenGraphs = ({ pressure, temperature, volume }) => (
             },
           ],
         }}
-        height={350}
-        width={533.33}
       />
     </Graph>
 
@@ -47,8 +43,6 @@ const SmallScreenGraphs = ({ pressure, temperature, volume }) => (
             },
           ],
         }}
-        height={350}
-        width={533.33}
       />
     </Graph>
   </Container>

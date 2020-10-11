@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useMedia } from "react-use-media";
 import styled from "styled-components";
 
@@ -9,7 +9,7 @@ import { getRecentReading } from "../../utils";
 
 import {
   GraphContainer,
-  Graph,
+  WideScreenGraph,
   PageTitle,
   PageContainer,
   MaxWidthContainer,
@@ -91,7 +91,7 @@ const StationView = ({ stationsReadings }) => {
           />
         ) : (
           <GraphContainer>
-            <Graph>
+            <WideScreenGraph>
               <Line
                 data={{
                   datasets: [
@@ -108,10 +108,12 @@ const StationView = ({ stationsReadings }) => {
                 height={600}
                 width={800}
                 options={{
+                  maintainAspectRatio: true,
+                  responsive: false,
                   legend: { display: false },
                 }}
               />
-            </Graph>
+            </WideScreenGraph>
           </GraphContainer>
         )}
       </PageContainer>
