@@ -20,13 +20,13 @@ const OverviewTable = ({ deviceReadings }) => (
       {Object.values(deviceReadings).map(({ id, readings }) => (
         <DeviceRow key={id} to={`/drilldown/${id}`}>
           <TextCell>{id}</TextCell>
-          <DigitsCell>{recentReading(readings).pressure}</DigitsCell>
-          <DigitsCell>{recentReading(readings).temp}</DigitsCell>
-          <DigitsCell>{recentReading(readings).volume}</DigitsCell>
-          <TextCell deviceType={recentReading(readings).deviceType}>
-            {recentReading(readings).deviceType}
+          <DigitsCell>{getRecentReading({readings}).pressure}</DigitsCell>
+          <DigitsCell>{getRecentReading({readings}).temp}</DigitsCell>
+          <DigitsCell>{getRecentReading({readings}).volume}</DigitsCell>
+          <TextCell deviceType={getRecentReading({readings}).deviceType}>
+            {getRecentReading({readings}).deviceType}
           </TextCell>
-          <TextCell>{recentReading(readings).status}</TextCell>
+          <TextCell>{getRecentReading({readings}).status}</TextCell>
         </DeviceRow>
       ))}
     </Body>
@@ -82,7 +82,5 @@ const TextTitle = styled(TitleCell)`
 const DigitsTitle = styled(TitleCell)`
   width: 15%;
 `;
-
-const recentReading = (readings) => getRecentReading({ readings });
 
 export default OverviewTable;
