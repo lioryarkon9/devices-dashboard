@@ -2,29 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { getDeviceTypeColor } from "../utils";
+import { getDeviceTypeColor, getRecentReading } from "../utils";
 import theme from "../theme";
 
 const OverviewTable = ({ deviceReadings }) => (
   <Container>
     <HeaderRow>
-      <TextTitle>Device ID</TextTitle>
+      <TextTitle>ID</TextTitle>
       <DigitsTitle>Pressure</DigitsTitle>
       <DigitsTitle>Temp.</DigitsTitle>
       <DigitsTitle>Volume</DigitsTitle>
+      <TextTitle>Type</TextTitle>
       <TextTitle>Status</TextTitle>
     </HeaderRow>
 
     <Body>
       {Object.values(deviceReadings).map(({ id, readings }) => (
         <DeviceRow key={id} to={`/drilldown/${id}`}>
-          <TextCell deviceType={readings[readings.length - 1].deviceType}>
-            {id}
+          <TextCell>{id}</TextCell>
+          <DigitsCell>{recentReading(readings).pressure}</DigitsCell>
+          <DigitsCell>{recentReading(readings).temp}</DigitsCell>
+          <DigitsCell>{recentReading(readings).volume}</DigitsCell>
+          <TextCell deviceType={recentReading(readings).deviceType}>
+            {recentReading(readings).deviceType}
           </TextCell>
-          <DigitsCell>{readings[readings.length - 1].pressure}</DigitsCell>
-          <DigitsCell>{readings[readings.length - 1].temp}</DigitsCell>
-          <DigitsCell>{readings[readings.length - 1].volume}</DigitsCell>
-          <TextCell>{readings[readings.length - 1].status}</TextCell>
+          <TextCell>{recentReading(readings).status}</TextCell>
         </DeviceRow>
       ))}
     </Body>
@@ -50,7 +52,7 @@ const HeaderRow = styled.div`
 `;
 
 const TextCell = styled.div`
-  width: 35%;
+  width: 23.33%;
   padding: 5px;
   text-align: center;
   color: ${({ deviceType }) =>
@@ -72,11 +74,13 @@ const TitleCell = styled.div`
 `;
 
 const TextTitle = styled(TitleCell)`
-  width: 35%;
+  width: 23.33%;
 `;
 
 const DigitsTitle = styled(TitleCell)`
   width: 15%;
 `;
+
+const recentReading = (readings) => getRecentReading({ readings });
 
 export default OverviewTable;

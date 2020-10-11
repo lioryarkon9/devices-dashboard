@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import theme from "../theme";
-import { getDeviceTypeColor } from "../utils";
 
 export const PageContainer = styled.div`
   width: 100%;
