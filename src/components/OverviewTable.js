@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { getDeviceTypeColor, getRecentReading } from "../utils";
+import { getEcoPlantTypeColor, getRecentReading } from "../utils";
 import theme from "../theme";
 
 const OverviewTable = ({ deviceReadings }) => (
@@ -56,7 +56,9 @@ const TextCell = styled.div`
   padding: 5px;
   text-align: center;
   color: ${({ deviceType }) =>
-    deviceType ? getDeviceTypeColor(deviceType) : theme.colors.text};
+    deviceType
+      ? getEcoPlantTypeColor({ type: deviceType, theme })
+      : theme.colors.text};
 `;
 
 const DigitsCell = styled.div`

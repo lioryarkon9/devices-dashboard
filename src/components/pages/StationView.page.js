@@ -3,6 +3,7 @@ import { Line } from "react-chartjs-2";
 import { useMedia } from "react-use-media";
 
 import theme, { desktopGraphConfig } from "../../theme";
+import { getRecentReading } from "../../utils";
 
 import {
   GraphContainer,
@@ -11,6 +12,7 @@ import {
   PageContainer,
   MaxWidthContainer,
   RecentReadings,
+  EcoPlantType,
 } from "../commonStyled";
 import EcoPlantReading from "../EcoPlantReading";
 import SmallScreenGraphs from "../SmallScreenGraphs";
@@ -20,10 +22,17 @@ const StationView = ({ stationsReadings }) => {
 
   const [desktopModeGraphId, setDesktopModeGraphId] = useState("pressure");
 
+  const recentReading = getRecentReading({ readings: stationsReadings });
+
   return (
     <MaxWidthContainer>
       <PageContainer>
-        <PageTitle>Station View</PageTitle>
+        <PageTitle>
+          Station View{" "}
+          <EcoPlantType type={recentReading.device_type}>
+            ({recentReading.device_type})
+          </EcoPlantType>
+        </PageTitle>
 
         <RecentReadings>
           <EcoPlantReading
@@ -95,7 +104,6 @@ const StationView = ({ stationsReadings }) => {
                 height={600}
                 width={800}
                 options={{
-                  maintainAspectRatio: false,
                   legend: { display: false },
                 }}
               />

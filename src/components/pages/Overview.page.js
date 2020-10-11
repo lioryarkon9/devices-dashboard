@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import theme from "../../theme";
-import { getRecentReading, getDeviceTypeColor } from "../../utils";
+import { getRecentReading, getEcoPlantTypeColor } from "../../utils";
 
 import { PageContainer, PageTitle, MaxWidthContainer } from "../commonStyled";
 import OverviewTable from "../OverviewTable";
@@ -60,7 +60,8 @@ const Device = styled(Link)`
 
 const TypeIndicator = styled.div`
   width: 20px;
-  background-color: ${({ deviceType }) => getDeviceTypeColor(deviceType)};
+  background-color: ${({ deviceType }) =>
+    getEcoPlantTypeColor({ type: deviceType, theme })};
   border-radius: 10px;
   margin-right: 8px;
   box-shadow: 0 0 2px 2px ${theme.colors.border};

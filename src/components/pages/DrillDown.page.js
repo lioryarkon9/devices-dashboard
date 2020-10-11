@@ -3,6 +3,7 @@ import { Line } from "react-chartjs-2";
 import { useMedia } from "react-use-media";
 
 import theme, { desktopGraphConfig } from "../../theme";
+import { getRecentReading } from "../../utils";
 
 import {
   GraphContainer,
@@ -11,6 +12,7 @@ import {
   MaxWidthContainer,
   PageTitle,
   RecentReadings,
+  EcoPlantType,
 } from "../commonStyled";
 import EcoPlantReading from "../EcoPlantReading";
 import SmallScreenGraphs from "../SmallScreenGraphs";
@@ -22,10 +24,17 @@ const DrillDown = ({ currentDevice }) => {
 
   const [desktopModeGraphId, setDesktopModeGraphId] = useState("pressure");
 
+  const recentReading = getRecentReading(currentDevice);
+
   return (
     <MaxWidthContainer>
       <PageContainer>
-        <PageTitle>Device: {currentDevice.id}</PageTitle>
+        <PageTitle>
+          Device: {currentDevice.id}{" "}
+          <EcoPlantType type={recentReading.deviceType}>
+            ({recentReading.deviceType})
+          </EcoPlantType>
+        </PageTitle>
 
         <RecentReadings>
           <EcoPlantReading

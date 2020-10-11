@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+import { getEcoPlantTypeColor } from "../utils";
 import theme from "../theme";
 
 export const PageContainer = styled.div`
@@ -38,4 +39,9 @@ export const GraphContainer = styled.div`
 export const Graph = styled.div`
   width: 800px;
   height: 600px;
+`;
+
+export const EcoPlantType = styled.span`
+  font-size: 14px;
+  color: ${({ type }) => getEcoPlantTypeColor({ type, theme })};
 `;
