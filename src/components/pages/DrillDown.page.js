@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
+import {Link} from "react-router-dom";
 import { useMedia } from "react-use-media";
+import styled from "styled-components";
 
 import theme, { desktopGraphConfig } from "../../theme";
 import { getRecentReading } from "../../utils";
@@ -35,6 +37,8 @@ const DrillDown = ({ currentDevice }) => {
             ({recentReading.deviceType})
           </EcoPlantType>
         </PageTitle>
+
+        <GoToOverview to="/">Back to Overview</GoToOverview>
 
         <RecentReadings>
           <EcoPlantReading
@@ -123,5 +127,10 @@ const DrillDown = ({ currentDevice }) => {
     </MaxWidthContainer>
   );
 };
+
+const GoToOverview = styled(Link)`
+  color: ${theme.colors.text};
+  margin-left: 10px;
+`;
 
 export default DrillDown;

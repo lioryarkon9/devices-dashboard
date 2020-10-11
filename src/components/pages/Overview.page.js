@@ -17,8 +17,10 @@ const OverviewPage = ({ deviceReadings }) => {
       <PageContainer>
         <PageTitle>Overview</PageTitle>
 
+        <GoToStationView to="/station-view">Station View</GoToStationView>
+
         {isSmallScreen ? (
-          <div>
+          <OverviewList>
             {Object.values(deviceReadings).map((device) => (
               <Device to={`/drilldown/${device.id}`} key={device.id}>
                 <TypeIndicator
@@ -28,7 +30,7 @@ const OverviewPage = ({ deviceReadings }) => {
                 <Status>{getRecentReading(device).status}</Status>
               </Device>
             ))}
-          </div>
+          </OverviewList>
         ) : (
           <OverviewTable deviceReadings={deviceReadings} />
         )}
@@ -36,6 +38,15 @@ const OverviewPage = ({ deviceReadings }) => {
     </MaxWidthContainer>
   );
 };
+
+const OverviewList = styled.div`
+  margin-top: 5px;
+`;
+
+const GoToStationView = styled(Link)`
+  color: ${theme.colors.text};
+  margin-left: 5px;
+`;
 
 const Status = styled.div`
   width: 30%;

@@ -23,6 +23,7 @@ export const PageTitle = styled.h2`
 `;
 
 export const RecentReadings = styled.div`
+  margin-top: 5px;
   display: flex;
 
   @media only screen and (max-width: ${theme.maxSmallScreenWidth}) {

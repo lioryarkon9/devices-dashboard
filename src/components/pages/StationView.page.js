@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Line } from "react-chartjs-2";
+import {Link} from "react-router-dom";
 import { useMedia } from "react-use-media";
+import styled from "styled-components";
 
 import theme, { desktopGraphConfig } from "../../theme";
 import { getRecentReading } from "../../utils";
@@ -33,6 +35,8 @@ const StationView = ({ stationsReadings }) => {
             ({recentReading.device_type})
           </EcoPlantType>
         </PageTitle>
+
+        <GoToOverview to="/">Overview</GoToOverview>
 
         <RecentReadings>
           <EcoPlantReading
@@ -114,5 +118,10 @@ const StationView = ({ stationsReadings }) => {
     </MaxWidthContainer>
   );
 };
+
+const GoToOverview = styled(Link)`
+  color: ${theme.colors.text};
+  margin-left: 10px;
+`;
 
 export default StationView;
