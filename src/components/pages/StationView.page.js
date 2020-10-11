@@ -22,7 +22,7 @@ import SmallScreenGraphs from "../SmallScreenGraphs";
 const StationView = ({ stationsReadings }) => {
   const isSmallScreen = useMedia({ maxWidth: theme.maxSmallScreenWidth });
 
-  const [desktopModeGraphId, setDesktopModeGraphId] = useState("pressure");
+  const [desktopModeGraphId, setDesktopModeGraphId] = useState(isSmallScreen ? null : "pressure");
 
   const recentReading = getRecentReading({ readings: stationsReadings });
 

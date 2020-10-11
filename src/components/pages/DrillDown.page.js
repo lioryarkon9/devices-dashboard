@@ -24,7 +24,7 @@ const DrillDown = ({ currentDevice }) => {
 
   const { readings, deviceId } = currentDevice;
 
-  const [desktopModeGraphId, setDesktopModeGraphId] = useState("pressure");
+  const [desktopModeGraphId, setDesktopModeGraphId] = useState(isSmallScreen ? null : "pressure");
 
   const recentReading = getRecentReading(currentDevice);
 
@@ -49,9 +49,7 @@ const DrillDown = ({ currentDevice }) => {
               }
             }
             label="Pressure"
-            value={
-              recentReading.pressure
-            }
+            value={recentReading.pressure}
           />
           <EcoPlantReading
             desktopConfig={
@@ -61,9 +59,7 @@ const DrillDown = ({ currentDevice }) => {
               }
             }
             label="Temperature"
-            value={
-              recentReading.temp
-            }
+            value={recentReading.temp}
           />
           <EcoPlantReading
             desktopConfig={
@@ -73,9 +69,7 @@ const DrillDown = ({ currentDevice }) => {
               }
             }
             label="Volume"
-            value={
-              recentReading.volume
-            }
+            value={recentReading.volume}
           />
         </RecentReadings>
 
