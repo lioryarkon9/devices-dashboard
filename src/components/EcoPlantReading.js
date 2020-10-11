@@ -43,7 +43,6 @@ const Container = styled.div`
   @media only screen and (max-width: ${theme.maxSmallScreenWidth}) {
     width: 100%;
     display: flex;
-    background-color: transparent;
   }
 `;
 
