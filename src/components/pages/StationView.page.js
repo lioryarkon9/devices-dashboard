@@ -47,7 +47,7 @@ const StationView = ({ stationsReadings }) => {
               }
             }
             label="Pressure"
-            value={stationsReadings[stationsReadings.length - 1].pressure}
+            value={recentReading.pressure}
           />
           <EcoPlantReading
             desktopConfig={
@@ -57,7 +57,7 @@ const StationView = ({ stationsReadings }) => {
               }
             }
             label="Temperature"
-            value={stationsReadings[stationsReadings.length - 1].temp}
+            value={recentReading.temp}
           />
           <EcoPlantReading
             desktopConfig={
@@ -67,7 +67,7 @@ const StationView = ({ stationsReadings }) => {
               }
             }
             label="Volume"
-            value={stationsReadings[stationsReadings.length - 1].volume}
+            value={recentReading.volume}
           />
         </RecentReadings>
 

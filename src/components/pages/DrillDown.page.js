@@ -22,7 +22,7 @@ import SmallScreenGraphs from "../SmallScreenGraphs";
 const DrillDown = ({ currentDevice }) => {
   const isSmallScreen = useMedia({ maxWidth: theme.maxSmallScreenWidth });
 
-  const { readings } = currentDevice;
+  const { readings, deviceId } = currentDevice;
 
   const [desktopModeGraphId, setDesktopModeGraphId] = useState("pressure");
 
@@ -32,7 +32,7 @@ const DrillDown = ({ currentDevice }) => {
     <MaxWidthContainer>
       <PageContainer>
         <PageTitle>
-          Device: {currentDevice.id}{" "}
+          Device: {deviceId}{" "}
           <EcoPlantType type={recentReading.deviceType}>
             ({recentReading.deviceType})
           </EcoPlantType>
@@ -50,7 +50,7 @@ const DrillDown = ({ currentDevice }) => {
             }
             label="Pressure"
             value={
-              currentDevice.readings[currentDevice.readings.length - 1].pressure
+              recentReading.pressure
             }
           />
           <EcoPlantReading
@@ -62,7 +62,7 @@ const DrillDown = ({ currentDevice }) => {
             }
             label="Temperature"
             value={
-              currentDevice.readings[currentDevice.readings.length - 1].temp
+              recentReading.temp
             }
           />
           <EcoPlantReading
@@ -74,7 +74,7 @@ const DrillDown = ({ currentDevice }) => {
             }
             label="Volume"
             value={
-              currentDevice.readings[currentDevice.readings.length - 1].volume
+              recentReading.volume
             }
           />
         </RecentReadings>
